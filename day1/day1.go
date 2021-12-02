@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	lines := utils.ReadFileLineByLine("input.txt")
+	lines := convertStringListToIntList(utils.ReadFileLineByLine("input.txt"))
 	fmt.Println(part1(lines))
 	fmt.Println(part2(lines))
 }
@@ -45,4 +45,18 @@ func sum(numbers ...int64) int64 {
 		sum += number
 	}
 	return sum
+}
+
+func convertStringListToIntList(lines []string) []int64 {
+	var intList []int64
+	for _, line := range lines {
+		intList = append(intList, StringToInt64(line))
+	}
+	return intList
+}
+
+func StringToInt64(s string) int64 {
+	var x int64
+	fmt.Sscanf(s, "%d", &x)
+	return x
 }

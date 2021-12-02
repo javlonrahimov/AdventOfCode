@@ -7,7 +7,7 @@ import (
 
 func TestDay1(t *testing.T) {
 
-	lines := utils.ReadFileLineByLine("input_test.txt")
+	lines := convertStringListToIntList(utils.ReadFileLineByLine("input_test.txt"))
 
 	t.Run("part 1", func(t *testing.T) {
 		got := part1(lines)

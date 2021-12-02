@@ -3,21 +3,20 @@ package utils
 import (
 	"bufio"
 	"os"
-	"strconv"
 )
 
-func ReadFileLineByLine(filePath string) []int64 {
+func ReadFileLineByLine(filePath string) []string {
 	file, err := os.Open(filePath)
 	if err != nil {
 		panic(err)
 	}
 	defer file.Close()
 
-	var lines []int64
+	var lines []string
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		data, _ := strconv.Atoi(scanner.Text())
-		lines = append(lines, int64(data))
+		data := scanner.Text()
+		lines = append(lines, data)
 	}
 
 	return lines
