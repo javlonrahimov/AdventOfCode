@@ -11,7 +11,7 @@ import (
 func main() {
 	lines := utils.ReadFileLineByLine("input.txt")
 	fmt.Println(part1(lines))
-
+	fmt.Println(part2(lines))
 }
 
 func part1(lines []string) int {
@@ -34,5 +34,21 @@ func part1(lines []string) int {
 }
 
 func part2(lines []string) int {
-	return 0
+	depth, length, aim := 0, 0, 0
+	for _, line := range lines {
+		lineArr := strings.Split(line, " ")
+		switch lineArr[0] {
+		case "forward":
+			result, _ := strconv.Atoi(lineArr[1])
+			length += result
+			depth += result * aim
+		case "up":
+			result, _ := strconv.Atoi(lineArr[1])
+			aim -= result
+		case "down":
+			result, _ := strconv.Atoi(lineArr[1])
+			aim += result
+		}
+	}
+	return depth * length
 }
