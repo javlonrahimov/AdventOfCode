@@ -13,21 +13,19 @@ func main() {
 }
 
 func part1(input []string) int {
-	inputs := utils.Trim_array(input)
 
-	gamma, epsilon := gamma_epsilon(inputs)
+	gamma, epsilon := gamma_epsilon(input)
 
 	return gamma * epsilon
 }
 
 func part2(input []string) int {
-	inputs := utils.Trim_array(input)
 
-	o2, err := strconv.ParseInt(filter(inputs, true), 2, 64)
+	o2, err := strconv.ParseInt(filter(input, true), 2, 64)
 	if err != nil {
 		fmt.Printf("error1 = %s \n", err)
 	}
-	co2, err := strconv.ParseInt(filter(inputs, false), 2, 64)
+	co2, err := strconv.ParseInt(filter(input, false), 2, 64)
 	if err != nil {
 		fmt.Printf("error2 = %s \n", err)
 	}
