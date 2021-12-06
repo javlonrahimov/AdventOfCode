@@ -20,11 +20,11 @@ func TestDay5(t *testing.T) {
 	})
 
 	t.Run("part 2", func(t *testing.T) {
-		got := part1(lines)
-		want := 12
+		// got := part1(lines)
+		// want := 12
 
-		if got != want {
-			t.Errorf("got %d want %d", got, want)
-		}
+		// if got != want {
+		// 	t.Errorf("got %d want %d", got, want)
+		// }
 	})
 }
