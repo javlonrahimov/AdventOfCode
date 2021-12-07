@@ -5,26 +5,25 @@ import (
 	"testing"
 )
 
-func TestDay6(t *testing.T) {
-	lines := utils.ReadFile("input_test.txt")
+func TestDay7(t *testing.T) {
+
+	input := utils.ReadFile("input_test.txt")
 
 	t.Run("part 1", func(t *testing.T) {
-		got := part1(lines, 18)
-		want := 26
+		got := part1(input)
+		want := 37
 
 		if got != want {
 			t.Errorf("got %d want %d", got, want)
-
 		}
 	})
 
 	t.Run("part 2", func(t *testing.T) {
-		got := part2(lines)
-		want := 26984457539
+		// got := part2(input)
+		// want := 168
 
-		if got != want {
-			t.Errorf("got %d want %d", got, want)
-
-		}
+		// if got != want {
+		// 	t.Errorf("got %d want %d", got, want)
+		// }
 	})
 }

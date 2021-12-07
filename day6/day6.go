@@ -3,8 +3,6 @@ package main
 import (
 	"fmt"
 	"javlonrahimov/AdventOfCode/utils"
-	"strconv"
-	"strings"
 )
 
 func main() {
@@ -14,7 +12,7 @@ func main() {
 }
 
 func part1(input string, days int) int {
-	list := parseStringToList(input)
+	list := utils.ParseStringToList(input)
 
 	for i := 0; i < days; i++ {
 		addCount := 0
@@ -33,18 +31,18 @@ func part1(input string, days int) int {
 	return len(list)
 }
 
-func part2(input string) int64 {
+func part2(input string) int {
 
-	school := parseStringToList(input)
+	school := utils.ParseStringToList(input)
 
-	counts := map[int64]int{}
+	counts := map[int]int{}
 	for _, timer := range school {
 		counts[timer] += 1
 	}
 
 	for day := 1; day <= 256; day++ {
 		// school = util.FlatMap(school, AdvanceOne)
-		nextCounts := map[int64]int{}
+		nextCounts := map[int]int{}
 		for timer, count := range counts {
 			if timer == 0 {
 				nextCounts[6] += count
@@ -61,28 +59,8 @@ func part2(input string) int64 {
 		}
 
 		if day == 256 {
-			return int64(schoolSize)
+			return schoolSize
 		}
 	}
 	return 0
 }
-
-
-func parseStringToList(input string) []int64 {
-	stringList := strings.Split(input, ",")
-	intList := make([]int64, len(stringList))
-	for i, s := range stringList {
-		intList[i] = toInt(s)
-	}
-
-	return intList
-}
-
-func toInt(s string) int64 {
-	n, err := strconv.Atoi(s)
-	if err != nil {
-		panic(err)
-	}
-	return int64(n)
-}
-
