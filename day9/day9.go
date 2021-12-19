@@ -12,8 +12,11 @@ func main() {
 
 func part1(lines []string) int {
 	result := 0
-	for index, value := range lines {
-		fmt.Println(index, value)
+	for _, line := range lines {
+		// fmt.Println(index, line)
+		for _, letter := range line {
+			fmt.Println(letter, "hello")
+		}
 	}
 	return result
 }
