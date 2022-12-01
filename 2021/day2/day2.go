@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
+	"javlonrahimov/AdventOfCode/2021/utils"
 	"strconv"
 	"strings"
-
-	utils "javlonrahimov/AdventOfCode/utils"
 )
 
 func main() {

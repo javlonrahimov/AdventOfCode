@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"javlonrahimov/AdventOfCode/utils"
+	utils2 "javlonrahimov/AdventOfCode/2021/utils"
 	"strings"
 )
 
@@ -11,7 +11,7 @@ const (
 )
 
 func main() {
-	lines := utils.ReadFile("input.txt")
+	lines := utils2.ReadFile("input.txt")
 	fmt.Println(part1(lines))
 	fmt.Println(part2(lines))
 }
@@ -95,7 +95,7 @@ func initBoard(input string) (plays []int, boards map[int][][]int) {
 			play := strings.Split(strings.TrimSpace(line), ",")
 			plays = make([]int, len(play))
 			for j, s := range play {
-				plays[j] = utils.ToInt(s)
+				plays[j] = utils2.ToInt(s)
 			}
 			continue
 		}
@@ -108,7 +108,7 @@ func initBoard(input string) (plays []int, boards map[int][][]int) {
 		columns := strings.Fields(line)
 		boards[board][rows] = make([]int, len(columns))
 		for k, col := range columns {
-			boards[board][rows][k] = utils.ToInt(col)
+			boards[board][rows][k] = utils2.ToInt(col)
 		}
 		rows++
 	}

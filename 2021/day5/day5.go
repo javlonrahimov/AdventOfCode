@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"javlonrahimov/AdventOfCode/utils"
+	"javlonrahimov/AdventOfCode/2021/utils"
 	"strconv"
 	"strings"
 )

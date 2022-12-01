@@ -2,17 +2,17 @@ package main
 
 import (
 	"fmt"
-	"javlonrahimov/AdventOfCode/utils"
+	utils2 "javlonrahimov/AdventOfCode/2021/utils"
 )
 
 func main() {
-	lines := utils.ReadFile("input.txt")
+	lines := utils2.ReadFile("input.txt")
 	fmt.Println(part1(lines, 80))
 	fmt.Println(part2(lines))
 }
 
 func part1(input string, days int) int {
-	list := utils.ParseStringToList(input)
+	list := utils2.ParseStringToList(input)
 
 	for i := 0; i < days; i++ {
 		addCount := 0
@@ -33,7 +33,7 @@ func part1(input string, days int) int {
 
 func part2(input string) int {
 
-	school := utils.ParseStringToList(input)
+	school := utils2.ParseStringToList(input)
 
 	counts := map[int]int{}
 	for _, timer := range school {
