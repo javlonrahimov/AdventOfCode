@@ -2,18 +2,18 @@ package main
 
 import (
 	"fmt"
-	utils2 "javlonrahimov/AdventOfCode/2021/utils"
+	"javlonrahimov/AdventOfCode/utils"
 	"math"
 )
 
 func main() {
-	input := utils2.ReadFile("input.txt")
+	input := utils.ReadFile("input.txt")
 	fmt.Println(part1(input))
 	fmt.Println(part2(input))
 }
 
 func part1(input string) int {
-	list := utils2.ParseStringToList(input)
+	list := utils.ParseStringToList(input)
 	q := math.MaxInt64
 
 	for i := findMin(list); i <= findMax(list); i++ {
@@ -26,7 +26,7 @@ func part1(input string) int {
 
 // todo: optimize
 func part2(input string) int {
-	list := utils2.ParseStringToList(input)
+	list := utils.ParseStringToList(input)
 	q := math.MaxInt64
 
 	for i := findMin(list); i <= findMax(list); i++ {

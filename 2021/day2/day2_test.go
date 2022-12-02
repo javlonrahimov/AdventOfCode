@@ -1,7 +1,7 @@
 package main
 
 import (
-	"javlonrahimov/AdventOfCode/2021/utils"
+	"javlonrahimov/AdventOfCode/utils"
 	"testing"
 )
 
