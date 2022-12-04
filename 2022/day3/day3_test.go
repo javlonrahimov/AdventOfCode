@@ -7,10 +7,10 @@ import (
 
 func TestDay2(t *testing.T) {
 
-	rounds := utils.ReadFileLineByLine("input_test.txt")
+	bags := utils.ReadFileLineByLine("input_test.txt")
 
 	t.Run("part 1", func(t *testing.T) {
-		got := part1(rounds)
+		got := part1(bags)
 		var want = 157
 
 		if got != want {
@@ -19,7 +19,7 @@ func TestDay2(t *testing.T) {
 	})
 
 	t.Run("part 2", func(t *testing.T) {
-		got := part2(rounds)
+		got := part2(bags)
 		var want = 70
 
 		if got != want {
