@@ -40,3 +40,11 @@ func ToASCIICode(arg interface{}) int {
 
 	return asciiVal
 }
+
+func Map[T any, K any](vs []T, f func(T) K) []K {
+	mapped := make([]K, len(vs))
+	for i, v := range vs {
+		mapped[i] = f(v)
+	}
+	return mapped
+}
