@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"javlonrahimov/AdventOfCode/utils"
+	"strconv"
 	"strings"
 )
 
@@ -58,11 +59,36 @@ func part1(lines []string) int {
 	return totalSignalStrength
 }
 
-func part2(lines []string) {
+func incrementAndControl(cpu *CPU) {
+	if (cpu.cycle)%40 == 0 && cpu.cycle <= 220 {
+		fmt.Println()
+	}
+	if cpu.value-1 == cpu.cycle%40 || cpu.value == cpu.cycle%40 || cpu.value+1 == cpu.cycle%40 {
+		fmt.Print("#")
+	} else {
+		fmt.Print(".")
+	}
+	cpu.cycle++
+}
 
+func part2(lines []string) {
+	cpu := &CPU{
+		cycle: 0,
+		value: 1,
+	}
+	for _, line := range lines {
+		operations := strings.Split(line, " ")
+		incrementAndControl(cpu)
+		if operations[0] == "addx" {
+			value, _ := strconv.Atoi(operations[1])
+			incrementAndControl(cpu)
+			cpu.value += value
+		}
+	}
 }
 
 func main() {
 	lines := utils.ReadFileLineByLine("input.txt")
 	fmt.Println(part1(lines))
+	part2(lines)
 }
