@@ -87,7 +87,7 @@ func part2(signalPackets []string) int {
 	two := parseLine("[[2]]")
 	six := parseLine("[[6]]")
 
-	two1Order, six1Order := 1, 1
+	twoOrder, sixOrder := 1, 1
 
 	for _, packet := range signalPackets {
 		if packet == "" {
@@ -97,14 +97,14 @@ func part2(signalPackets []string) int {
 		transmission := parseLine(packet)
 
 		if compare(transmission, two) == 1 {
-			two1Order++
+			twoOrder++
 		}
 		if compare(transmission, six) == 1 {
-			six1Order++
+			sixOrder++
 		}
 	}
 
-	return two1Order * (six1Order + 1)
+	return twoOrder * (sixOrder + 1)
 }
 
 func main() {
