@@ -19,7 +19,7 @@ func TestDay15(t *testing.T) {
 	})
 
 	t.Run("part 2", func(t *testing.T) {
-		got := part2(lines)
+		got := part2(lines, 20)
 		var want int64 = 56000011
 
 		if got != want {

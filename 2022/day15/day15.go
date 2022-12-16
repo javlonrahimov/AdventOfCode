@@ -79,15 +79,15 @@ func part1(lines []string, y int) int {
 	return covered
 }
 
-func part2(lines []string) int64 {
+func part2(lines []string, maxCoordinates int) int64 {
 	sensors := parseInput(lines)
 	notDetectedBeaconCoors := Coors{
 		x: 0,
 		y: 0,
 	}
-	for y := 0; y < 4000000; y++ {
+	for y := 0; y < maxCoordinates; y++ {
 	loop:
-		for x := 0; x < 4000000; x++ {
+		for x := 0; x < maxCoordinates; x++ {
 			notDetectedBeaconCoors.x = x
 			notDetectedBeaconCoors.y = y
 			for _, sensor := range sensors {
@@ -96,7 +96,7 @@ func part2(lines []string) int64 {
 					continue loop
 				}
 			}
-			return int64(x*4000000) + int64(y)
+			return int64(x*4_000_000) + int64(y)
 		}
 	}
 	return 0
@@ -105,5 +105,5 @@ func part2(lines []string) int64 {
 func main() {
 	lines := utils.ReadFileLineByLine("input.txt")
 	fmt.Println(part1(lines, 2_000_000))
-	fmt.Println(part2(lines))
+	fmt.Println(part2(lines, 4_000_000))
 }
