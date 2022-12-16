@@ -92,7 +92,10 @@ func part2(lines []string, maxCoordinates int) int64 {
 			notDetectedBeaconCoors.y = y
 			for _, sensor := range sensors {
 				if sensor.Contains(notDetectedBeaconCoors) {
-					x += sensor.d - abs(sensor.pos.y-y) + abs(sensor.pos.x-x)
+					x += sensor.d - manhattan(
+						Coors{x: x, y: sensor.pos.y},
+						Coors{x: sensor.pos.x, y: y},
+					)
 					continue loop
 				}
 			}
