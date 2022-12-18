@@ -36,8 +36,8 @@ func (s Sensor) Contains(p Coors) bool {
 
 func parseInput(lines []string) []Sensor {
 	var out []Sensor
+	re := regexp.MustCompile("-?[0-9]+")
 	for _, line := range lines {
-		re := regexp.MustCompile("-?[0-9]+")
 		numbers := re.FindAllString(line, -1)
 		xSensor, ySensor, xBeacon, yBeacon := utils.ToInt(numbers[0]), utils.ToInt(numbers[1]), utils.ToInt(numbers[2]), utils.ToInt(numbers[3])
 		sp := Coors{xSensor, ySensor}

@@ -48,3 +48,17 @@ func Map[T any, K any](vs []T, f func(T) K) []K {
 	}
 	return mapped
 }
+
+func Min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func Max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
